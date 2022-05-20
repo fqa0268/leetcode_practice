@@ -12,7 +12,7 @@ public:
         //    (1) if bar "i" is shorter than bar "barL", the location can contain (height[barL] - height[i]) units of water since bar "barR" is no shorter than bar "barL".
         //    (2) if bar "i" is higher than bar "barL", update the "barL" with "i".
         // 3. "j" & "barR" work in the same way.
-        while(i < j && j > 0 && i< (int) height.size()){
+        while(i < j){ // 刪掉了&& j > 0 && i< (int) height.size()，因為如果i<j，後面這兩件事就不可能發生
             while(height[barL] <= height[barR]){
                 i++;
                 if(height[i] > height[barL] || i == j){
